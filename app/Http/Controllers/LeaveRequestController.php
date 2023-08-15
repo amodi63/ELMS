@@ -85,6 +85,9 @@ class LeaveRequestController extends Controller
                 ->addColumn('employee_name', function ($row) {
                     return $row->user->full_name;
                 })
+                ->addColumn('diff_of_nums', function ($row) {
+                    return $row->CalculateDateDifferenceInDays($row->start_date,$row->end_date) . " Days";
+                })
                 ->addColumn('action', function ($row) {
                     $actions = '<div class="dropdown dropdown-inline">
                                     <button type="button" class="btn btn-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,7 +103,7 @@ class LeaveRequestController extends Controller
                             $actions .= '<a class="dropdown-item changeLeaveRequestStatus" data-action="Deny" href="javascript:void(0);" data-leave-request-id="' . $row->id . '" data-url="' . route('employee.leaveRequests.changeLeaveRequestStatus') . '" ><i class="far fa-times-circle text-danger mr-1"></i> Deny</a>';
                         }
                     }
-                    if($row->status == 'Pending'){
+                    if($row->status == 'Pending' && auth()->user()->type === 'employee'){
                         $actions .= '<a class="dropdown-item editRequestBtn" href="javascript:void(0);" data-url="' . route('employee.leave-request.edit', [$row->user_id, $row->id]) . '" data-leave-request-id="' . $row->id . '"><i class="fas fa-edit text-warning mr-1"></i>Edit</a>';
 
                     }
@@ -110,7 +113,7 @@ class LeaveRequestController extends Controller
 
                     return $actions;
                 })
-
+              
 
 
                 ->editColumn('created_at', function ($row) {

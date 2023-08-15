@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,8 @@ class LeaveRequest extends Model
 {
     use HasFactory;
     protected $fillable = ['leave_type_id','start_date','end_date','status','comments','user_id'];
+    
+
     protected static function booted(): void {
 
     
@@ -36,5 +39,11 @@ class LeaveRequest extends Model
         }
         
         return $this->attributes['comments'];
+    }
+    public function CalculateDateDifferenceInDays($startDate, $endDate)
+    {
+        $start = Carbon::parse($startDate);
+        $end = Carbon::parse($endDate);
+        return $start->diffInDays($end);
     }
 }

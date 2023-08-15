@@ -89,46 +89,29 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="kt_datatable"
-                                            rowspan="1" colspan="1" style="" aria-sort="ascending"
-                                            aria-label="Order ID: activate to sort column descending">#</th>
+                                            rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID">#</th>
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="kt_datatable"
-                                            rowspan="1" colspan="1" style="" aria-sort="ascending"
-                                            aria-label="Order ID: activate to sort column descending">Employee Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                                colspan="1" style=""
-                                                aria-label="Country: activate to sort column ascending">Laeve Type</th>
+                                            rowspan="1" colspan="1" aria-sort="ascending" aria-label="Emp. Name">Employee</th>
                                         <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=""
-                                            aria-label="Country: activate to sort column ascending">Start Date</th>
-                                            <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=""
-                                            aria-label="Ship Address: activate to sort column ascending">End Date
-                                        </th>
+                                            colspan="1" aria-label="Leave Type">Leave</th>
                                         <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=""
-                                            aria-label="Ship Address: activate to sort column ascending">Status
-                                        </th>
+                                            colspan="1" aria-label="Start Date">Start</th>
                                         <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=""
-                                            aria-label="Ship Address: activate to sort column ascending">Comments
-                                        </th>
-                                        
-                                        
+                                            colspan="1" aria-label="End Date">End</th>
                                         <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=" "
-                                            aria-label="Company Name: activate to sort column ascending">Created At</th>
-
-
-                                        <th class="sorting " tabindex="0" aria-controls="kt_datatable" rowspan="1"
-                                            colspan="1" style=""
-                                            aria-label="Company Name: activate to sort column ascending">Actions</th>
-
-
-
-
-
-
+                                            colspan="1" aria-label="Count Days">Days</th>
+                                        <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
+                                            colspan="1" aria-label="Status">Status</th>
+                                        <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
+                                            colspan="1" aria-label="Comments">Comments</th>
+                                        <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
+                                            colspan="1" aria-label="Created At">Created</th>
+                                        <th class="sorting" tabindex="0" aria-controls="kt_datatable" rowspan="1"
+                                            colspan="1" aria-label="Actions">Actions</th>
                                     </tr>
+                                    
+                                    
+                                    
                                 </thead>
                                 <tbody>
 
@@ -172,6 +155,7 @@
     <script src="{{ asset('assets/js/pages/features/miscellaneous/toastr.js?v=7.2.9') }}"></script>
     
         <script src="{{ asset('assets/js/pages/crud/file-upload/image-input.js?v=7.2.9') }}"></script>
+		<script src="{{ asset('assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js') }}"></script>
 
     <!--end::Page Scripts-->
     

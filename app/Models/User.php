@@ -69,7 +69,8 @@ class User extends Authenticatable
     public function getAvatarUrlAttribute()
     {
         if (!$this->avatar) {
-            return "https://ui-avatars.com/api/?name=$this->first_name+$this->last_name";
+            $formattedLastName = str_replace(' ', '', $this->last_name);
+            return "https://ui-avatars.com/api/?name=$this->first_name+$formattedLastName";
         }
 
         return asset('storage/' . $this->attributes['avatar']);

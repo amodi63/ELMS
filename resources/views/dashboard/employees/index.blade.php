@@ -207,6 +207,8 @@
     <script src="{{ asset('assets/js/pages/features/miscellaneous/toastr.js?v=7.2.9') }}"></script>
     
         <script src="{{ asset('assets/js/pages/crud/file-upload/image-input.js?v=7.2.9') }}"></script>
+        <script src="{{ asset('assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js') }}"></script>
+
 
     <!--end::Page Scripts-->
     <script>

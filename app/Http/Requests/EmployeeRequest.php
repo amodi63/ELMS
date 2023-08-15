@@ -28,7 +28,7 @@ class EmployeeRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:50'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')->ignore($emp_id)],
-            'gender' => ['nullable', 'in:male,female'],
+            'gender' => ['required', 'in:male,female'],
             'phone' => ['nullable', 'numeric'],
             'avatar' => ['nullable', 'image'],
             'date_of_birth' => ['nullable', 'date', 'before:today'],

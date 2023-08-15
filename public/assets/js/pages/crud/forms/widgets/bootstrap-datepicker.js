@@ -104,10 +104,29 @@ var KTBootstrapDatepicker = function () {
         });
 
          // inline picker
-        $('#kt_datepicker_6').datepicker({
+        $('#date_of_birth').datepicker({
             rtl: KTUtil.isRTL(),
             todayHighlight: true,
-            templates: arrows
+            templates: arrows,
+            autoclose: true,
+            format:'yyyy-mm-dd',
+        });
+        $('#start_date').datepicker({
+            rtl: KTUtil.isRTL(),
+            todayHighlight: true,
+            templates: arrows,
+            setDate: new Date(),
+            autoclose: true,
+            format:'yyyy-mm-dd',
+        });
+        $('#end_date').datepicker({
+            rtl: KTUtil.isRTL(),
+            todayHighlight: true,
+            templates: arrows,
+            setDate: new Date(),
+            autoclos: true,
+            format:'yyyy-mm-dd',
+            
         });
     }
 

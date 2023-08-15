@@ -80,7 +80,13 @@ $(document).ready(function() {
                 $('#date_of_birth').val(response.data.date_of_birth);
                 $('#gender').val(response.data.gender).selectpicker('refresh');
                 $('#emp_id').val(response.data.id);
-                $('#kt_image_5').css('background-image', 'url(storage/' + response.data.avatar + ')');
+                if( response.data.avatar){
+
+                    $('#kt_image_5').css('background-image', 'url(storage/' + response.data.avatar + ')');
+                }else{
+                    $('#kt_image_5').css('background-image', 'url(' + baseUrl + '/assets/media/users/blank.png)');
+
+                }
                
                 $('.employeeModal').modal('show');
 
@@ -137,8 +143,9 @@ $(document).ready(function() {
     //End Ajax Delete Employee
     $('.employeeModal').on('hidden.bs.modal', function() {
         $('.text-danger').html('');
-        $('.gender').val("").selectpicker('refresh');
+        $('#gender').val("").selectpicker('refresh');
         $('#Employee-form')[0].reset();
+        $('#Employee-form #emp_id').val("");
         $('#kt_image_5').css('background-image', 'url(' + baseUrl + '/assets/media/users/blank.png)');
        
 

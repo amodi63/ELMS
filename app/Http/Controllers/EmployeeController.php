@@ -141,7 +141,7 @@ class EmployeeController extends Controller
      */
     public function destroy($employee)
     {
-        User::employee()->find($employee)->delete();
+        User::employees()->find($employee)->delete();
         
         return response()->json(['message'=> 'Deleted Successfully!', 'status' => true]);
     }

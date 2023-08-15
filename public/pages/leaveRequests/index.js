@@ -101,7 +101,17 @@ $(document).ready(function() {
     
     
 
+    $('#end_date, #start_date').on('change', function () {
+        var startDate = new Date($('#start_date').val());
+        var endDate = new Date($('#end_date').val());
 
+        if (!isNaN(startDate) && !isNaN(endDate)) {
+            var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24) ) ;
+
+            $('#num_days').val(diffDays);
+        }
+    });
 
     //Begin Ajax add Request
     $('#save-leave-request-btn').on('click', function() {
@@ -111,10 +121,11 @@ $(document).ready(function() {
         $(this).attr('disabled', true);
 
         var _leave_request_url = $('#add_employee').data('url') ;
-        var employeeID =  $('#add_employee').data('employee');
+        var employeeID =  $('#add_employee').data('employee')  ;
 
         var _data_leave_request = new FormData(leave_request_form);
         _data_leave_request.append('user_id', employeeID);
+
 
 
         $.ajaxSetup({
@@ -168,9 +179,18 @@ $(document).ready(function() {
                 
                 $('#modal-title').html("Edit Leave Request");
                 $('#save-leave-request-btn').html("Update");
-               
+                
+                var startDate = new Date(response.data.start_date);
+                var endDate = new Date(response.data.end_date);
+                var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    
+                
+                $('#num_days').val(diffDays);
                 $('#start_date').val(response.data.start_date);
                 $('#end_date').val(response.data.end_date);
+              
+                
                 $('#leave_type_id').val(response.data.leave_type_id).selectpicker('refresh');
                 $('#leaveRequest').val(response.data.id);
                
@@ -273,6 +293,7 @@ var KTDatatablesDataSourceAjaxServer = function() {
                 }},
 				{data: 'start_date'},
 				{data: 'end_date'},
+				{data: 'diff_of_nums'},
 				{data: 'status',render:function(data, type, row){
                     var badgeClass = '';
                     var statusText = '';

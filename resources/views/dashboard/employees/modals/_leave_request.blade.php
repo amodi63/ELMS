@@ -27,15 +27,19 @@
                             </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <x-form.label label='Start Date' class="text-right " />
-                            <x-form.input id="start_date" type="date" name="start_date" />
+                            <x-form.input id="start_date" type="text" name="start_date" />
                             <x-form.span id="start_date_error" />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <x-form.label label='End Date' class="text-right " />
-                            <x-form.input id="end_date" type="date" name="end_date" />
+                            <x-form.input id="end_date" type="text" name="end_date" />
                             <x-form.span id="end_date_error" />
+                        </div>
+                        <div class="col-md-2">
+                            <x-form.label label='N.O.D' class="text-right " />
+                            <x-form.input id="num_days" type="text" name="num_days" readonly />
                         </div>
                     </div>
 

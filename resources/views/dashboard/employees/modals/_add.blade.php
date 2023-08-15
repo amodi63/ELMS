@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                             <x-form.label label='D.O.B' class="text-right " />
-                                            <x-form.input id="date_of_birth" type="date" name="date_of_birth" />
+                                            <x-form.input id="date_of_birth" type="text" name="date_of_birth" />
                                             <x-form.span id="date_of_birth_error" />
 
                                         </div>
