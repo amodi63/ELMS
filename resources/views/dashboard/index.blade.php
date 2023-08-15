@@ -18,7 +18,7 @@
         </svg><!--end::Svg Icon--></span>
         <!--end::Svg Icon-->
     </span>
-    <p class="text-primary font-weight-bold font-size-h6">Users: <span id="userCountPlaceholder">{{ $employees_count }}</span></p>
+    <p class="text-primary font-weight-bold font-size-h6">Employees: <span id="userCountPlaceholder">{{ $employees_count }}</span></p>
 </div>
 
 @endif

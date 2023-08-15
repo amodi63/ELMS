@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <x-form.input id="user_id" name="user_id" type="hidden" />
+                    <x-form.input id="leaveRequest" name="leave_request_id" type="hidden" />
 
                     <div class="row">
                             <div class=" col-md-12">

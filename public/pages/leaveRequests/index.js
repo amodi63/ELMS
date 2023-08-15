@@ -154,30 +154,27 @@ $(document).ready(function() {
     //End Ajax Add Employee
 
     //Begin Ajax Edit Employee
-    $('body').on('click', '.editBtn', function() {
+    $('body').on('click', '.editRequestBtn', function() {
        
-        let employeeID = $(this).data('employee');
+        let leaveRequest = $(this).data('leave-request-id');
         let _url = $(this).data('url'); 
         $.ajax({
             url: _url,
             method: 'GET',
             data: {
-                employee: employeeID
+                leaveRequest: leaveRequest
             },
             success: function(response) {
-                $('#modal-title').html("Edit Employee");
-                $('#save-btn').html("Update Employee");
-                $('#first_name').val(response.data.first_name);
-                $('#last_name').val(response.data.last_name);
-                $('#email').val(response.data.email);
-                $('#phone').val(response.data.phone);
-                $('#address').val(response.data.address);
-                $('#date_of_birth').val(response.data.date_of_birth);
-                $('#gender').val(response.data.gender).selectpicker('refresh');
-                $('#emp_id').val(response.data.id);
-                $('#kt_image_5').css('background-image', 'url(storage/' + response.data.avatar + ')');
+                
+                $('#modal-title').html("Edit Leave Request");
+                $('#save-leave-request-btn').html("Update");
                
-                $('.employeeModal').modal('show');
+                $('#start_date').val(response.data.start_date);
+                $('#end_date').val(response.data.end_date);
+                $('#leave_type_id').val(response.data.leave_type_id).selectpicker('refresh');
+                $('#leaveRequest').val(response.data.id);
+               
+                $('.addRequestModal').modal('show');
 
             }
 
