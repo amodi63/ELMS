@@ -49,7 +49,7 @@
 					<!--end::Aside body-->
 					<!--begin: Aside footer for desktop-->
 					<div class="d-flex flex-column-auto justify-content-between mt-15">
-						<div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© 2021 Metronic</div>
+						<div class="text-dark-50 font-weight-bold order-2 order-sm-1 my-2">© {{ date('Y') }} {{ config('app.name') }}</div>
 						<div class="d-flex order-1 order-sm-2 my-2">
 							<a href="#" class="text-muted text-hover-primary">Privacy</a>
 							<a href="#" class="text-muted text-hover-primary ml-4">Legal</a>
