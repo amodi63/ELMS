@@ -2,7 +2,7 @@
 @section('title','login Page')
 @section('form')
 <!--begin::Signin-->
-<div class="login-form login-signin">
+<div class="login-form login-signin w-100">
 	<!--begin::Form-->
 
 	<form class="form" action="{{ route('login') }}" method="post">
@@ -16,12 +16,12 @@
 		<!--begin::Title-->
 		<!--begin::Form group-->
 		<div class="form-group py-3 m-0">
-			<input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Email" value="{{ old('email') }}" placeholder="Email" name="email" autocomplete="off" />
+			<input class="form-control h-auto border-0 p-3 placeholder-dark-75" type="Email" value="{{ old('email') }}" placeholder="Email" name="email" autocomplete="off" />
 		</div>
 		<!--end::Form group-->
 		<!--begin::Form group-->
 		<div class="form-group py-3 border-top m-0">
-			<input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Password" placeholder="Password" name="password" />
+			<input class="form-control h-auto border-0 p-3 placeholder-dark-75" type="Password" placeholder="Password" name="password" />
 		</div>
 	
 		<!--end::Form group-->
